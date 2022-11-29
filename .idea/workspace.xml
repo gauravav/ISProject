@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Initial Project with few minor changes">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Made some more changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +30,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "18",
     "project.structure.last.edited": "Modules",
@@ -72,7 +73,7 @@
       <updated>1669732804727</updated>
       <workItem from="1669732806022" duration="517000" />
       <workItem from="1669733331433" duration="298000" />
-      <workItem from="1669733649631" duration="725000" />
+      <workItem from="1669733649631" duration="5597000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project with few minor changes">
       <created>1669733071472</created>
@@ -88,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669733585806</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Made some more changes">
+      <created>1669734558703</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669734558703</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +115,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Project with few minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Project with few minor changes" />
+    <MESSAGE value="Made some more changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made some more changes" />
   </component>
 </project>

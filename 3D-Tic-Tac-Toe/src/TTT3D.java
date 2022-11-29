@@ -107,29 +107,37 @@ public class TTT3D extends JFrame implements ActionListener
 			g2.setStroke(new BasicStroke(2));
 
 			//Board 0
-			g2.drawLine(50, 87, 250, 87);
-			g2.drawLine(25, 129, 225, 129);
-			g2.drawLine(25, 129, 225, 129);
-			g2.drawLine(120, 60, 45, 160);
-			g2.drawLine(170, 60, 95, 160);
+			g2.drawLine(40, 100, 160, 100);
+			g2.drawLine(30, 130, 150, 130);
+			g2.drawLine(20, 160, 140, 160);
+			g2.drawLine(80, 70, 40, 190);
+			g2.drawLine(110, 70, 70, 190);
+			g2.drawLine(140, 70, 100, 190);
+
 
 			//Board 1
-			g2.drawLine(50, 212, 250, 212);
-			g2.drawLine(25, 254, 225, 254);
-			g2.drawLine(120, 185, 45, 285);
-			g2.drawLine(170, 185, 95, 285);
+			g2.drawLine(40, 240, 160, 240);
+			g2.drawLine(30, 270, 150, 270);
+			g2.drawLine(20, 300, 140, 300);
+			g2.drawLine(80, 210, 40, 330);
+			g2.drawLine(110, 210, 70, 330);
+			g2.drawLine(140, 210, 100, 330);
 
 			//Board 2
-			g2.drawLine(50, 337, 250, 337);
-			g2.drawLine(25, 379, 225, 379);
-			g2.drawLine(120, 310, 45, 410);
-			g2.drawLine(170, 310, 95, 410);
-			
+			g2.drawLine(40, 380, 160, 380);
+			g2.drawLine(30, 410, 150, 410);
+			g2.drawLine(20, 440, 140, 440);
+			g2.drawLine(80, 350, 40, 470);
+			g2.drawLine(110, 350, 70, 470);
+			g2.drawLine(140, 350, 100, 470);
+
 			//Board 3  Change the values accordingly
-			g2.drawLine(50, 462, 250, 462); 
-			g2.drawLine(25, 504, 225, 504);
-			g2.drawLine(120, 435, 45, 535);
-			g2.drawLine(170, 435, 95, 535);
+			g2.drawLine(40, 520, 160, 520);
+			g2.drawLine(30, 550, 150, 550);
+			g2.drawLine(20, 580, 140, 580);
+			g2.drawLine(80, 490, 40, 610);
+			g2.drawLine(110, 490, 70, 610);
+			g2.drawLine(140, 490, 100, 610);
 
 			//Draws red line through the first and last winning position, always going through the second, indicating the location
 			//of the win

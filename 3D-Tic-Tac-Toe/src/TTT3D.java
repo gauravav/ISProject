@@ -131,7 +131,7 @@ public class TTT3D extends JFrame implements ActionListener
 			g2.drawLine(110, 350, 70, 470);
 			g2.drawLine(140, 350, 100, 470);
 
-			//Board 3  Change the values accordingly
+			//Board 3
 			g2.drawLine(40, 520, 160, 520);
 			g2.drawLine(30, 550, 150, 550);
 			g2.drawLine(20, 580, 140, 580);
@@ -228,10 +228,10 @@ public class TTT3D extends JFrame implements ActionListener
 		int rowShift = 25;
 		int rowStart = 50;
 
-		int xPos = 48;
-		int yPos = 43;
-		int width = 60;
-		int height = 50;
+		int xPos = 50;
+		int yPos = 70;
+		int width = 20;
+		int height = 30;
 
 		//Variables to keep track of the current button being placed
 		int boardNum = 0;
@@ -241,13 +241,13 @@ public class TTT3D extends JFrame implements ActionListener
 		int boxCounter = 0;
 
 		//Board loop
-		for (int i = 0; i <= 2; i++)
+		for (int i = 0; i <= 3; i++)
 		{
 			//Row loop
-			for (int j = 0; j <= 2; j++)
+			for (int j = 0; j <= 3; j++)
 			{
 				//Column loop
-				for(int k = 0; k <= 2; k++)
+				for(int k = 0; k <= 3; k++)
 				{
 					//Creating the new button, setting it to be empty in both arrays
 					config[i][j][k] = '-';
@@ -271,7 +271,7 @@ public class TTT3D extends JFrame implements ActionListener
 					//Bump the column number 1, move the position that the next button will be placed to the right, and add the current button to the panel
 					columnNum++;
 					boxCounter++;
-					xPos += 52;
+					xPos += 30;
 					getContentPane().add(boardConfig[i][j][k]);
 				}
 
@@ -279,7 +279,8 @@ public class TTT3D extends JFrame implements ActionListener
 				//Reset the column number, bump the row number one, move the position that the next button will be placed down and skew it so it matches with the game board
 				columnNum = 0;
 				rowNum++;
-				xPos = rowStart -= rowShift;
+				rowStart = rowStart - rowShift;
+				xPos = rowStart;
 				yPos += 41;
 			}
 

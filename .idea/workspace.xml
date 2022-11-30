@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Made some more changes">
+    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Modified Board Grid into 4x4, XY Coordinate Notes also added in Notes folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" afterDir="false" />
     </list>
@@ -37,6 +37,11 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected="Application.TTT3D">
@@ -73,7 +78,7 @@
       <updated>1669732804727</updated>
       <workItem from="1669732806022" duration="517000" />
       <workItem from="1669733331433" duration="298000" />
-      <workItem from="1669733649631" duration="5597000" />
+      <workItem from="1669733649631" duration="11796000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project with few minor changes">
       <created>1669733071472</created>
@@ -96,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669734558703</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modified Board Grid into 4x4, XY Coordinate Notes also added in Notes folder">
+      <created>1669760338167</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669760338167</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +128,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Project with few minor changes" />
     <MESSAGE value="Made some more changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some more changes" />
+    <MESSAGE value="Modified Board Grid into 4x4, XY Coordinate Notes also added in Notes folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified Board Grid into 4x4, XY Coordinate Notes also added in Notes folder" />
   </component>
 </project>

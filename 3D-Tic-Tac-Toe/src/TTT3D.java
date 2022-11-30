@@ -286,11 +286,11 @@ public class TTT3D extends JFrame implements ActionListener
 
 			//Reset row numbers and row shifts
 			rowNum = 0;
-			rowShift = 28;
-			rowStart = 58;
+			rowShift = 10;
+			rowStart = 50;
 			boardNum++;
 			xPos = rowStart;
-			yPos += 2;
+			yPos += 20;
 		}
 
 

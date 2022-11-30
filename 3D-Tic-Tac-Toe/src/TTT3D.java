@@ -499,11 +499,11 @@ public class TTT3D extends JFrame implements ActionListener
 		win = false;
 		lookAheadCounter = 0;
 
-		for (int i = 0; i <= 2; i++)
+		for (int i = 0; i <= 3; i++)
 		{
-			for (int j = 0; j <= 2; j++)
+			for (int j = 0; j <= 3; j++)
 			{
-				for(int k = 0; k <= 2; k++)
+				for(int k = 0; k <= 3; k++)
 				{
 	    		config[i][j][k] = '-';
 	    		boardConfig[i][j][k].setText("");
@@ -512,7 +512,7 @@ public class TTT3D extends JFrame implements ActionListener
 			}
 		}
 
-		finalWin = new int[3];
+		finalWin = new int[4];
 	}
 
 	/*
@@ -523,11 +523,11 @@ public class TTT3D extends JFrame implements ActionListener
 	public void disableBoard()
 	{
 		int index = 0;
-		for (int i = 0; i <= 2; i++)
+		for (int i = 0; i <= 3; i++)
 		{
-			for (int j = 0; j <= 2; j++)
+			for (int j = 0; j <= 3; j++)
 			{
-				for(int k = 0; k <= 2; k++)
+				for(int k = 0; k <= 3; k++)
 				{
 					if(contains(finalWin, Integer.parseInt(boardConfig[i][j][k].getName())))
 					{
@@ -574,9 +574,9 @@ public class TTT3D extends JFrame implements ActionListener
 	private void computerPlayRandom()
 	{
 		Random random = new Random();
-		int row = random.nextInt(3);
-		int column = random.nextInt(3);
-		int board = random.nextInt(3);
+		int row = random.nextInt(4);
+		int column = random.nextInt(4);
+		int board = random.nextInt(4);
 		config[board][row][column] = computerPiece;
 		boardConfig[board][row][column].setText(Character.toString(computerPiece));
 
@@ -601,11 +601,11 @@ public class TTT3D extends JFrame implements ActionListener
 		bestScore = -1000;
 		//Walk through the entire game board
 		check:
-		for (int i = 0; i <= 2; i++)
+		for (int i = 0; i <= 3; i++)
 		{
-			for (int j = 0; j <= 2; j++)
+			for (int j = 0; j <= 3; j++)
 			{
-				for(int k = 0; k <= 2; k++)
+				for(int k = 0; k <= 3; k++)
 				{
 					if(config[i][j][k] == '-')
 					{
@@ -697,11 +697,11 @@ public class TTT3D extends JFrame implements ActionListener
 				int hValue;
 				OneMove nextMove;
 
-				for (int i = 0; i <= 2; i++)
+				for (int i = 0; i <= 3; i++)
 				{
-					for (int j = 0; j <= 2; j++)
+					for (int j = 0; j <= 3; j++)
 					{
-						for(int k = 0; k <= 2; k++)
+						for(int k = 0; k <= 3; k++)
 						{
 							if(config[i][j][k] == '-')
 							{
@@ -747,11 +747,11 @@ public class TTT3D extends JFrame implements ActionListener
 				int hValue;
 				OneMove nextMove;
 
-				for (int i = 0; i <= 2; i++)
+				for (int i = 0; i <= 3; i++)
 				{
-					for (int j = 0; j <= 2; j++)
+					for (int j = 0; j <= 3; j++)
 					{
-						for(int k = 0; k <= 2; k++)
+						for(int k = 0; k <= 3; k++)
 						{
 
 							if(config[i][j][k] == '-')
@@ -841,6 +841,8 @@ public class TTT3D extends JFrame implements ActionListener
 				{3, 13, 23}, {6, 16, 26},{2, 10, 18}, {5, 13, 21}, {8, 16, 24}, {0, 13, 26}, {2, 13, 24},
 				{6, 13, 20}, {8, 13, 18},
 		};
+
+
 
 		//Array that indicates all the spaces on the game board
 		int[] gameBoard = new int[27];

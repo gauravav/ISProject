@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Modified Board Grid into 4x4, XY Coordinate Notes also added in Notes folder">
+    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Playing with buttons in grid">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" afterDir="false" />
     </list>
@@ -78,7 +78,7 @@
       <updated>1669732804727</updated>
       <workItem from="1669732806022" duration="517000" />
       <workItem from="1669733331433" duration="298000" />
-      <workItem from="1669733649631" duration="11796000" />
+      <workItem from="1669733649631" duration="14422000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project with few minor changes">
       <created>1669733071472</created>
@@ -108,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669760338167</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Playing with buttons in grid">
+      <created>1669775359054</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669775359054</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +136,7 @@
     <MESSAGE value="Initial Project with few minor changes" />
     <MESSAGE value="Made some more changes" />
     <MESSAGE value="Modified Board Grid into 4x4, XY Coordinate Notes also added in Notes folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified Board Grid into 4x4, XY Coordinate Notes also added in Notes folder" />
+    <MESSAGE value="Playing with buttons in grid" />
+    <option name="LAST_COMMIT_MESSAGE" value="Playing with buttons in grid" />
   </component>
 </project>

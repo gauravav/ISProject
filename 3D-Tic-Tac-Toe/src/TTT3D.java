@@ -225,7 +225,7 @@ public class TTT3D extends JFrame implements ActionListener
 		score.setFont(new Font("Tahoma", Font.BOLD, 15));
 
 		//Variables that determine the locations of the TicTacToeButtons as they are placed within loops
-		int rowShift = 25;
+		int rowShift = 10;
 		int rowStart = 50;
 
 		int xPos = 50;
@@ -281,7 +281,7 @@ public class TTT3D extends JFrame implements ActionListener
 				rowNum++;
 				rowStart = rowStart - rowShift;
 				xPos = rowStart;
-				yPos += 41;
+				yPos += 30;
 			}
 
 			//Reset row numbers and row shifts

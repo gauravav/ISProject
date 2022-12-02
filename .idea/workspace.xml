@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Changed some settings for 4x4 grid.&#10;Have to work on wins list combinations">
+    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Written some code for win combinations.. have to write straight down through boards yet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" afterDir="false" />
     </list>
@@ -78,7 +78,7 @@
       <updated>1669732804727</updated>
       <workItem from="1669732806022" duration="517000" />
       <workItem from="1669733331433" duration="298000" />
-      <workItem from="1669733649631" duration="20450000" />
+      <workItem from="1669733649631" duration="21732000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project with few minor changes">
       <created>1669733071472</created>
@@ -136,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669834051866</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Written some code for win combinations.. have to write straight down through boards yet">
+      <created>1669914054715</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669914054715</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +168,7 @@
     <MESSAGE value="Butoons for Board 0 are working. Have to work on Board 1,2,3 buttons." />
     <MESSAGE value="All buttons are added to grid and they are working" />
     <MESSAGE value="Changed some settings for 4x4 grid.&#10;Have to work on wins list combinations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed some settings for 4x4 grid.&#10;Have to work on wins list combinations" />
+    <MESSAGE value="Written some code for win combinations.. have to write straight down through boards yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Written some code for win combinations.. have to write straight down through boards yet" />
   </component>
 </project>

@@ -37,7 +37,7 @@ public class TTT3D extends JFrame implements ActionListener
 	private int humanScore = 0;				//Total score for human
 	private int computerScore = 0;			//Total score for CPU
 	int[] finalWin = new int[4];			//Final winning combination
-	TicTacToeButton[] finalWinButton = new TicTacToeButton[3];	//Final winning combination
+	TicTacToeButton[] finalWinButton = new TicTacToeButton[4];	//Final winning combination
 
 	public boolean win = false;				//Variable to tell if a winning move has been achieved
 
@@ -165,7 +165,7 @@ public class TTT3D extends JFrame implements ActionListener
 		textPanel = new JPanel();
 
 		//New Game Button
-		newGameBtn = new JButton("New Game" + humanPiece);
+		newGameBtn = new JButton("New Game");
 		newGameBtn.setBounds(400, 370, 120, 30);
 		newGameBtn.addActionListener(new NewButtonListener());
 		newGameBtn.setName("newGameBtn");
@@ -253,11 +253,11 @@ public class TTT3D extends JFrame implements ActionListener
 					//Creating the new button, setting it to be empty in both arrays
 					config[i][j][k] = '-';
 					boardConfig[i][j][k] = new TicTacToeButton();
-					boardConfig[i][j][k].setFont(new Font("Arial Bold", Font.ITALIC, 20));
+					boardConfig[i][j][k].setFont(new Font("Arial Bold", Font.ITALIC, 15));
 					boardConfig[i][j][k].setText("");
 					//Making it transparent and add
 					boardConfig[i][j][k].setContentAreaFilled(false);
-					boardConfig[i][j][k].setBorderPainted(false);
+					boardConfig[i][j][k].setBorderPainted(true);
 					boardConfig[i][j][k].setFocusPainted(false);
 
 					//Placing the button
@@ -342,9 +342,9 @@ public class TTT3D extends JFrame implements ActionListener
 				humanFirst = false;
 
 				if(!hardButton.isSelected())
-					computerPlayRandom();
+					computerPlayRandom(); //Easy And Medium Difficulty scenario
 				else
-					computerPlays();
+					computerPlays(); // Hard Scenario
 			}
 			else
 			{
@@ -431,7 +431,7 @@ public class TTT3D extends JFrame implements ActionListener
 			else if(mediumButton.isSelected())
 			{
 				difficulty = 2;
-				totalLooksAhead = 2;
+				totalLooksAhead = 4;
 			}
 			else
 			{
@@ -525,11 +525,11 @@ public class TTT3D extends JFrame implements ActionListener
 	public void disableBoard()
 	{
 		int index = 0;
-		for (int i = 0; i <= 3; i++)
+		for (int i = 0; i < 3; i++)
 		{
-			for (int j = 0; j <= 3; j++)
+			for (int j = 0; j < 3; j++)
 			{
-				for(int k = 0; k <= 3; k++)
+				for(int k = 0; k < 3; k++)
 				{
 					if(contains(finalWin, Integer.parseInt(boardConfig[i][j][k].getName())))
 					{
@@ -545,9 +545,7 @@ public class TTT3D extends JFrame implements ActionListener
 				}
 			}
 		}
-
 		repaint();
-
 	}
 
 	/*
@@ -699,11 +697,11 @@ public class TTT3D extends JFrame implements ActionListener
 				int hValue;
 				OneMove nextMove;
 
-				for (int i = 0; i <= 3; i++)
+				for (int i = 0; i < 3; i++)
 				{
-					for (int j = 0; j <= 3; j++)
+					for (int j = 0; j < 3; j++)
 					{
-						for(int k = 0; k <= 3; k++)
+						for(int k = 0; k < 3; k++)
 						{
 							if(config[i][j][k] == '-')
 							{
@@ -749,11 +747,11 @@ public class TTT3D extends JFrame implements ActionListener
 				int hValue;
 				OneMove nextMove;
 
-				for (int i = 0; i <= 3; i++)
+				for (int i = 0; i < 3; i++)
 				{
-					for (int j = 0; j <= 3; j++)
+					for (int j = 0; j < 3; j++)
 					{
-						for(int k = 0; k <= 3; k++)
+						for(int k = 0; k < 3; k++)
 						{
 
 							if(config[i][j][k] == '-')
@@ -822,23 +820,23 @@ public class TTT3D extends JFrame implements ActionListener
 
 		//Win table
 //		int[][] wins = {
-//				//Rows on single board
+//				//Rows on single board 9
 //				{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {9, 10, 11}, {12, 13, 14}, {15, 16, 17}, {18, 19, 20},
 //				{21, 22, 23}, {24, 25, 26},
 //
-//				//Columns on single board
+//				//Columns on single board 9
 //				{0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {9, 12, 15}, {10, 13, 16}, {11, 14, 17}, {18, 21, 24},
 //				{19, 22, 25}, {20, 23, 26},
 //
-//				//Diagonals on single board
+//				//Diagonals on single board 6
 //				{0, 4, 8}, {2, 4, 6}, {9, 13, 17}, {11, 13, 15},
 //				{18, 22, 26}, {20, 22, 24},
 //
-//				//Straight down through boards
+//				//Straight down through boards 9
 //				{0, 9, 18}, {1, 10, 19}, {2, 11, 20}, {3, 12, 21}, {4, 13, 22}, {5, 14, 23}, {6, 15, 24},
 //				{7, 16, 25}, {8, 17, 26},
 //
-//				//Diagonals through boards
+//				//Diagonals through boards 16
 //				{0, 12, 24}, {1, 13, 25}, {2, 14, 26}, {6, 12, 18}, {7, 13, 19}, {8, 14, 20}, {0, 10, 20},
 //				{3, 13, 23}, {6, 16, 26},/{2, 10, 18}, {5, 13, 21}, {8, 16, 24},/ {0, 13, 26}, {2, 13, 24},
 //				{6, 13, 20}, {8, 13, 18},
@@ -881,11 +879,11 @@ public class TTT3D extends JFrame implements ActionListener
 
 		//If the space on the board is the same as the input char, set the corresponding location
 		//in gameBoard to 1.
-		for (int i = 0; i <= 2; i++)
+		for (int i = 0; i <= 3; i++)
 		{
-			for (int j = 0; j <= 2; j++)
+			for (int j = 0; j <= 3; j++)
 			{
-				for(int k = 0; k <= 2; k++)
+				for(int k = 0; k <= 3; k++)
 				{
 					if(config[i][j][k] == c)
 					{
@@ -901,7 +899,7 @@ public class TTT3D extends JFrame implements ActionListener
 		}
 
 		//For each possible win combination
-		for (int i = 0; i <= 48; i++)
+		for (int i = 0; i <= 75; i++)
 		{
 			//Resetting counter to see if all 3 locations have been used
 			counter = 0;
@@ -1009,7 +1007,7 @@ public class TTT3D extends JFrame implements ActionListener
 		}
 
 		//For each possible win combination
-		for (int i = 0; i <= 48; i++)
+		for (int i = 0; i <= 75; i++)
 		{
 			//Resetting counter to see if all 4 locations have been used
 			counter = 0;

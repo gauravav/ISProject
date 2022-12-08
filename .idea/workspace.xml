@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Now it works.!">
+    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="win table finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" afterDir="false" />
     </list>
@@ -80,7 +80,8 @@
       <workItem from="1669733331433" duration="298000" />
       <workItem from="1669733649631" duration="24937000" />
       <workItem from="1670258323970" duration="2576000" />
-      <workItem from="1670294537445" duration="8630000" />
+      <workItem from="1670294537445" duration="11632000" />
+      <workItem from="1670452074949" duration="6694000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project with few minor changes">
       <created>1669733071472</created>
@@ -152,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670000013674</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="win table finished">
+      <created>1670374024044</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670374024044</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,12 +187,31 @@
     <MESSAGE value="Changed some settings for 4x4 grid.&#10;Have to work on wins list combinations" />
     <MESSAGE value="Written some code for win combinations.. have to write straight down through boards yet" />
     <MESSAGE value="Now it works.!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now it works.!" />
+    <MESSAGE value="win table finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="win table finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java</url>
+          <line>573</line>
+          <properties class="TTT3D" method="computerPlayRandom">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java</url>
+          <line>590</line>
+          <properties class="TTT3D" method="computerPlays">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint type="java-field">
           <url>file://$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java</url>
           <line>43</line>
           <properties field="humanPiece" class="TTT3D" />

@@ -104,43 +104,37 @@ public class TTT3D extends JFrame implements ActionListener
 			g2.setStroke(new BasicStroke(2));
 
 			//Board 0
-//			g2.drawLine(40, 100, 160, 100);
-//			g2.drawLine(30, 130, 150, 130);
-//			g2.drawLine(20, 160, 140, 160);
-//			g2.drawLine(80, 70, 40, 190);
-//			g2.drawLine(110, 70, 70, 190);
-//			g2.drawLine(140, 70, 100, 190);
-			g2.drawLine(60, 60, 300, 60);
-			g2.drawLine(40, 110, 280, 110);
-			g2.drawLine(20, 160, 260, 160);
-			g2.drawLine(140, 10, 60, 210);
-			g2.drawLine(200, 10, 120, 210);
-			g2.drawLine(260, 10, 180, 210);
+			g2.drawLine(60, 80, 300, 80);
+			g2.drawLine(40, 130, 280, 130);
+			g2.drawLine(20, 180, 260, 180);
+			g2.drawLine(140, 30, 60, 230);
+			g2.drawLine(200, 30, 120, 230);
+			g2.drawLine(260, 30, 180, 230);
 
 
 			//Board 1
-			g2.drawLine(40, 240, 160, 240);
-			g2.drawLine(30, 270, 150, 270);
-			g2.drawLine(20, 300, 140, 300);
-			g2.drawLine(80, 210, 40, 330);
-			g2.drawLine(110, 210, 70, 330);
-			g2.drawLine(140, 210, 100, 330);
+			g2.drawLine(60, 300, 300, 300);
+			g2.drawLine(40, 350, 280, 350);
+			g2.drawLine(20, 400, 260, 400);
+			g2.drawLine(140, 250, 60, 450);
+			g2.drawLine(200, 250, 120, 450);
+			g2.drawLine(260, 250, 180, 450);
 
 			//Board 2
-			g2.drawLine(40, 380, 160, 380);
-			g2.drawLine(30, 410, 150, 410);
-			g2.drawLine(20, 440, 140, 440);
-			g2.drawLine(80, 350, 40, 470);
-			g2.drawLine(110, 350, 70, 470);
-			g2.drawLine(140, 350, 100, 470);
+			g2.drawLine(60, 520, 300, 520);
+			g2.drawLine(40, 570, 280, 570);
+			g2.drawLine(20, 620, 260, 620);
+			g2.drawLine(140, 470, 60, 670);
+			g2.drawLine(200, 470, 120, 670);
+			g2.drawLine(260, 470, 180, 670);
 
 			//Board 3
-			g2.drawLine(40, 520, 160, 520);
-			g2.drawLine(30, 550, 150, 550);
-			g2.drawLine(20, 580, 140, 580);
-			g2.drawLine(80, 490, 40, 610);
-			g2.drawLine(110, 490, 70, 610);
-			g2.drawLine(140, 490, 100, 610);
+			g2.drawLine(60, 740, 300, 740);
+			g2.drawLine(40, 790, 280, 790);
+			g2.drawLine(20, 840, 260, 840);
+			g2.drawLine(140, 690, 60, 890);
+			g2.drawLine(200, 690, 120, 890);
+			g2.drawLine(260, 690, 180, 890);
 
 			//Draws red line through the first and last winning position, always going through the second, indicating the location
 			//of the win
@@ -230,13 +224,13 @@ public class TTT3D extends JFrame implements ActionListener
 		score.setFont(new Font("Tahoma", Font.BOLD, 15));
 
 		//Variables that determine the locations of the TicTacToeButtons as they are placed within loops
-		int rowShift = 10;
-		int rowStart = 50;
+		int rowShift = 20;
+		int rowStart = 70;
 
-		int xPos = 50;
-		int yPos = 70;
-		int width = 20;
-		int height = 30;
+		int xPos = 70;
+		int yPos = 30;
+		int width = 60;
+		int height = 50;
 
 		//Variables to keep track of the current button being placed
 		int boardNum = 0;
@@ -257,12 +251,12 @@ public class TTT3D extends JFrame implements ActionListener
 					//Creating the new button, setting it to be empty in both arrays
 					config[i][j][k] = '-';
 					boardConfig[i][j][k] = new TicTacToeButton();
-					boardConfig[i][j][k].setFont(new Font("Arial Bold", Font.ITALIC, 15));
+					boardConfig[i][j][k].setFont(new Font("Arial Bold", Font.ITALIC, 20));
 					boardConfig[i][j][k].setText("");
 
 					//Making it transparent and add
 					boardConfig[i][j][k].setContentAreaFilled(false);
-					boardConfig[i][j][k].setBorderPainted(true);
+					boardConfig[i][j][k].setBorderPainted(false);
 					boardConfig[i][j][k].setFocusPainted(false);
 
 					//Placing the button
@@ -278,7 +272,7 @@ public class TTT3D extends JFrame implements ActionListener
 					//Bump the column number 1, move the position that the next button will be placed to the right, and add the current button to the panel
 					columnNum++;
 					boxCounter++;
-					xPos += 30;
+					xPos += 60;
 					getContentPane().add(boardConfig[i][j][k]);
 				}
 
@@ -288,13 +282,13 @@ public class TTT3D extends JFrame implements ActionListener
 				rowNum++;
 				rowStart = rowStart - rowShift;
 				xPos = rowStart;
-				yPos += 30;
+				yPos += 50;
 			}
 
 			//Reset row numbers and row shifts
 			rowNum = 0;
-			rowShift = 10;
-			rowStart = 50;
+			rowShift = 20;
+			rowStart = 70;
 			boardNum++;
 			xPos = rowStart;
 			yPos += 20;

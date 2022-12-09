@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="#4 Red color is visible now">
-      <change beforePath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" afterDir="false" />
+    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Green color changes while AI wins">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,7 @@
       <workItem from="1670258323970" duration="2576000" />
       <workItem from="1670294537445" duration="11632000" />
       <workItem from="1670452074949" duration="10517000" />
-      <workItem from="1670519255287" duration="33240000" />
+      <workItem from="1670519255287" duration="34422000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project with few minor changes">
       <created>1669733071472</created>
@@ -195,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670625807108</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Green color changes while AI wins">
+      <created>1670626020679</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1670626020679</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +235,8 @@
     <MESSAGE value="#3 Testing the 60x50 grid for board 1" />
     <MESSAGE value="#3 View and buttons ready for game" />
     <MESSAGE value="#4 Red color is visible now" />
-    <option name="LAST_COMMIT_MESSAGE" value="#4 Red color is visible now" />
+    <MESSAGE value="Green color changes while AI wins" />
+    <option name="LAST_COMMIT_MESSAGE" value="Green color changes while AI wins" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -104,12 +104,18 @@ public class TTT3D extends JFrame implements ActionListener
 			g2.setStroke(new BasicStroke(2));
 
 			//Board 0
-			g2.drawLine(40, 100, 160, 100);
-			g2.drawLine(30, 130, 150, 130);
-			g2.drawLine(20, 160, 140, 160);
-			g2.drawLine(80, 70, 40, 190);
-			g2.drawLine(110, 70, 70, 190);
-			g2.drawLine(140, 70, 100, 190);
+//			g2.drawLine(40, 100, 160, 100);
+//			g2.drawLine(30, 130, 150, 130);
+//			g2.drawLine(20, 160, 140, 160);
+//			g2.drawLine(80, 70, 40, 190);
+//			g2.drawLine(110, 70, 70, 190);
+//			g2.drawLine(140, 70, 100, 190);
+			g2.drawLine(60, 60, 300, 60);
+			g2.drawLine(40, 110, 280, 110);
+			g2.drawLine(20, 160, 260, 160);
+			g2.drawLine(140, 10, 60, 210);
+			g2.drawLine(200, 10, 120, 210);
+			g2.drawLine(260, 10, 180, 210);
 
 
 			//Board 1
@@ -425,7 +431,7 @@ public class TTT3D extends JFrame implements ActionListener
 			if(easyButton.isSelected())
 			{
 				difficulty = 1;
-				totalLooksAhead = 1;
+				totalLooksAhead = 2;
 			}
 			else if(mediumButton.isSelected())
 			{

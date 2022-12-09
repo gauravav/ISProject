@@ -622,7 +622,7 @@ public class TTT3D extends JFrame implements ActionListener
 							config[i][j][k] = computerPiece;
 							boardConfig[i][j][k].setText(Character.toString(computerPiece));
 							status.setText("   AI won! Please press New Game button to play again.");
-							status.setForeground(Color.GREEN);
+							status.setForeground(Color.BLUE);
 							win = true;
 							computerScore++;
 							disableBoard();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="win table finished">
+    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Should work on AI game play.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" afterDir="false" />
     </list>
@@ -81,7 +81,8 @@
       <workItem from="1669733649631" duration="24937000" />
       <workItem from="1670258323970" duration="2576000" />
       <workItem from="1670294537445" duration="11632000" />
-      <workItem from="1670452074949" duration="6694000" />
+      <workItem from="1670452074949" duration="10517000" />
+      <workItem from="1670519255287" duration="9527000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project with few minor changes">
       <created>1669733071472</created>
@@ -160,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670374024044</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Should work on AI game play.">
+      <created>1670469794783</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670469794783</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,34 +196,34 @@
     <MESSAGE value="Written some code for win combinations.. have to write straight down through boards yet" />
     <MESSAGE value="Now it works.!" />
     <MESSAGE value="win table finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="win table finished" />
+    <MESSAGE value="Should work on AI game play." />
+    <option name="LAST_COMMIT_MESSAGE" value="Should work on AI game play." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint type="java-method">
-          <url>file://$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java</url>
-          <line>573</line>
-          <properties class="TTT3D" method="computerPlayRandom">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java</url>
-          <line>590</line>
-          <properties class="TTT3D" method="computerPlays">
+          <line>803</line>
+          <properties class="TTT3D" method="heuristic">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
-        <line-breakpoint type="java-field">
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java</url>
-          <line>43</line>
-          <properties field="humanPiece" class="TTT3D" />
-          <option name="timeStamp" value="3" />
+          <line>679</line>
+          <properties class="TTT3D" method="lookAhead">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java</url>
+          <line>804</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

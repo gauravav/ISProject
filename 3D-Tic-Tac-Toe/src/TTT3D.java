@@ -1,10 +1,7 @@
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.util.Arrays;
 import java.util.Random;
 
 /*
@@ -142,12 +139,13 @@ public class TTT3D extends JFrame implements ActionListener
 			//Draws red line through the first and last winning position, always going through the second, indicating the location
 			//of the win
 			//Needs work on this
-			if(win)
-			{
-				g2.setColor(Color.RED);
-				g2.drawLine(finalWinButton[0].getBounds().x + 27, finalWinButton[0].getBounds().y + 20,
-				finalWinButton[2].getBounds().x + 27, finalWinButton[2].getBounds().y + 20);
-			}
+//			if(win)
+//			{
+//				g2.setColor(Color.RED);
+//				g2.drawLine(finalWinButton[0].getBounds().x + 27, finalWinButton[0].getBounds().y + 20,
+//				finalWinButton[2].getBounds().x + 27, finalWinButton[2].getBounds().y + 20);
+//			}
+
 		}
 	}
 
@@ -255,6 +253,7 @@ public class TTT3D extends JFrame implements ActionListener
 					boardConfig[i][j][k] = new TicTacToeButton();
 					boardConfig[i][j][k].setFont(new Font("Arial Bold", Font.ITALIC, 15));
 					boardConfig[i][j][k].setText("");
+
 					//Making it transparent and add
 					boardConfig[i][j][k].setContentAreaFilled(false);
 					boardConfig[i][j][k].setBorderPainted(true);
@@ -579,7 +578,6 @@ public class TTT3D extends JFrame implements ActionListener
 		int board = random.nextInt(4);
 		config[board][row][column] = computerPiece;
 		boardConfig[board][row][column].setText(Character.toString(computerPiece));
-
 		boardConfig[board][row][column].setEnabled(false);
 	}
 
@@ -624,7 +622,6 @@ public class TTT3D extends JFrame implements ActionListener
 							status.setForeground(Color.RED);
 							win = true;
 							computerScore++;
-
 							disableBoard();
 							updateScore();
 							break check;
@@ -697,11 +694,11 @@ public class TTT3D extends JFrame implements ActionListener
 				int hValue;
 				OneMove nextMove;
 
-				for (int i = 0; i < 3; i++)
+				for (int i = 0; i <= 3; i++)
 				{
-					for (int j = 0; j < 3; j++)
+					for (int j = 0; j <= 3; j++)
 					{
-						for(int k = 0; k < 3; k++)
+						for(int k = 0; k <= 3; k++)
 						{
 							if(config[i][j][k] == '-')
 							{
@@ -747,11 +744,11 @@ public class TTT3D extends JFrame implements ActionListener
 				int hValue;
 				OneMove nextMove;
 
-				for (int i = 0; i < 3; i++)
+				for (int i = 0; i <= 3; i++)
 				{
-					for (int j = 0; j < 3; j++)
+					for (int j = 0; j <= 3; j++)
 					{
-						for(int k = 0; k < 3; k++)
+						for(int k = 0; k <= 3; k++)
 						{
 
 							if(config[i][j][k] == '-')

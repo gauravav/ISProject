@@ -4,18 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-/*
- * This application is an implementation of the game Tic-Tac-Toe however modified to be played in 3 dimensions. It uses a minimax
- * method with alpha-beta pruning for its move decision tree. Both scores for the computer and for the human are displayed and
- * updated when either has won. A tie counter does not need to be implemented as, with the unique nature of  3D Tic-Tac-Toe, a
- * tie is impossible to achieve. This game implements the ability for the user to choose who goes first (Human by default), the if they would like to
- * be 'X' or 'O' (X by default), and what difficulty they would like to select (Medium by default). The difficulty setting directly sets how many looks ahead the computer
- * will perform, up to 6. Any more and the computer wins too often (every time). It is integrated with a full GUI that is very user
- * friendly.
- *
- * Devigili 2012
- */
-
 public class TTT3D extends JFrame implements ActionListener
 {
 
@@ -24,9 +12,7 @@ public class TTT3D extends JFrame implements ActionListener
 	private JPanel boardPanel, textPanel, buttonPanel;
 	private JLabel status, score;
 	private JRadioButton oRadButton, xRadButton, cpuFirstButton, humanFirstButton, easyButton, mediumButton, hardButton;
-
 	private boolean humanFirst = true;
-
 	private int difficulty = 2;				//Variable that changes the amount of looks ahead and the intelligence used if computer goes first
 	private int totalLooksAhead = 2;		//Variable that contains the amount of looks ahead the minimax algorithm will do
 	private int lookAheadCounter = 0;		//Variable that keeps track of the looks ahead that have been done through recursion
@@ -44,6 +30,32 @@ public class TTT3D extends JFrame implements ActionListener
 	private char config[][][];				//Configuration of the board that is manipulated in the minimax algorithm
 	private TicTacToeButton[][][] boardConfig;	//Button array allows direct access to all buttons on the GUI itself
 
+	private int[][] wins = {
+			//Rows on single board 16
+			{0,1,2,3}, {4,5,6,7}, {8,9,10,11}, {12,13,14,15}, {16,17,18,19} , {20,21,22,23},
+			{24,25,26,27}, {28,29,30,31}, {32,33,34,35}, {36,37,38,39}, {40,41,42,43}, {44,45,46,47},
+			{48,49,50,51} , {52,53,54,55}, {56,57,58,59}, {60,61,62,63},
+
+			//Columns on single board 16
+			{0,4,8,12}, {1,5,9,13}, {2,6,10,14}, {3,7,11,15}, {16,20,24,28}, {17,21,25,29}, {18,22,26,30},
+			{19,23,27,31}, {32,36,40,44}, {33,37,41,45}, {34,38,42,46}, {35,39,43,47}, {48,52,56,60},
+			{49,53,57,61}, {50,54,58,62}, {51,55,59,63},
+
+			//Diagonals on single board 8
+			{0,5,10,15}, {3,6,9,12}, {16,21,26,31}, {19,22,25,28}, {32,37,42,47}, {35,38,41,44},
+			{48, 53, 58, 63}, {51,54,57,60},
+
+			//Straight down through boards 16
+			{0,16,32,48}, {1,17,33,49}, {2,18,34,50}, {3,19,35,51}, {4,20,36,52}, {5,21,37,53}, {6,22,38,54},
+			{7,23,39,55}, {8,24,40,56}, {9,25,41,57}, {10,26,42,58}, {11,27,43,59}, {12,28,44,60},
+			{13,29,45,61}, {14,30,46,62}, {15,31,47,63},
+
+			//Diagonals through boards 20
+			{0,20,40,60}, {1,21,41,61}, {2,22,42,62}, {3,23,43,63}, {12,24,36,48}, {13,25,37,49}, {14,26,38,50},
+			{15,27,39,51}, {0,17,34,51}, {4,21,38,55}, {8,25,42,59}, {12,29,46,63}, {3,18,33,48}, {7,22,37,52},
+			{11,26,41,56}, {15,30,45,60}, {0,21,42,63}, {3,22,41,60}, {12,25,38,51}, {15,26,37,48}
+	};
+
 
 	public static void main(String a[])
 	{
@@ -59,8 +71,6 @@ public class TTT3D extends JFrame implements ActionListener
 		public int boxRow;
 		public int boxColumn;
 		public int boxBoard;
-    //this.setFont(new Font("Arial", Font.PLAIN, 10));
-
 	}
 
 	/*
@@ -74,13 +84,12 @@ public class TTT3D extends JFrame implements ActionListener
 		int column;
 	}
 
-
 	/*
 	 * constructor
 	 */
 	public TTT3D()
 	{
-		super("3D Tic-Tac-Toe!");
+		super("IS Project");
 		setSize(700,1000);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setupBoard();
@@ -96,55 +105,55 @@ public class TTT3D extends JFrame implements ActionListener
      */
 	public class BoardPanel extends JPanel
 	{
-		protected void paintComponent(Graphics g)
+		protected void paintComponent(Graphics graphic)
 		{
-			super.paintComponent(g);
+			super.paintComponent(graphic);
 
-			Graphics2D g2 = (Graphics2D) g;
-			g2.setStroke(new BasicStroke(2));
+			Graphics2D line = (Graphics2D) graphic;
+			line.setStroke(new BasicStroke(2));
 
 			//Board 0
-			g2.drawLine(60, 80, 300, 80);
-			g2.drawLine(40, 130, 280, 130);
-			g2.drawLine(20, 180, 260, 180);
-			g2.drawLine(140, 30, 60, 230);
-			g2.drawLine(200, 30, 120, 230);
-			g2.drawLine(260, 30, 180, 230);
+			line.drawLine(60, 80, 300, 80);
+			line.drawLine(40, 130, 280, 130);
+			line.drawLine(20, 180, 260, 180);
+			line.drawLine(140, 30, 60, 230);
+			line.drawLine(200, 30, 120, 230);
+			line.drawLine(260, 30, 180, 230);
 
 
 			//Board 1
-			g2.drawLine(60, 300, 300, 300);
-			g2.drawLine(40, 350, 280, 350);
-			g2.drawLine(20, 400, 260, 400);
-			g2.drawLine(140, 250, 60, 450);
-			g2.drawLine(200, 250, 120, 450);
-			g2.drawLine(260, 250, 180, 450);
+			line.drawLine(60, 300, 300, 300);
+			line.drawLine(40, 350, 280, 350);
+			line.drawLine(20, 400, 260, 400);
+			line.drawLine(140, 250, 60, 450);
+			line.drawLine(200, 250, 120, 450);
+			line.drawLine(260, 250, 180, 450);
 
 			//Board 2
-			g2.drawLine(60, 520, 300, 520);
-			g2.drawLine(40, 570, 280, 570);
-			g2.drawLine(20, 620, 260, 620);
-			g2.drawLine(140, 470, 60, 670);
-			g2.drawLine(200, 470, 120, 670);
-			g2.drawLine(260, 470, 180, 670);
+			line.drawLine(60, 520, 300, 520);
+			line.drawLine(40, 570, 280, 570);
+			line.drawLine(20, 620, 260, 620);
+			line.drawLine(140, 470, 60, 670);
+			line.drawLine(200, 470, 120, 670);
+			line.drawLine(260, 470, 180, 670);
 
 			//Board 3
-			g2.drawLine(60, 740, 300, 740);
-			g2.drawLine(40, 790, 280, 790);
-			g2.drawLine(20, 840, 260, 840);
-			g2.drawLine(140, 690, 60, 890);
-			g2.drawLine(200, 690, 120, 890);
-			g2.drawLine(260, 690, 180, 890);
+			line.drawLine(60, 740, 300, 740);
+			line.drawLine(40, 790, 280, 790);
+			line.drawLine(20, 840, 260, 840);
+			line.drawLine(140, 690, 60, 890);
+			line.drawLine(200, 690, 120, 890);
+			line.drawLine(260, 690, 180, 890);
 
 			//Draws red line through the first and last winning position, always going through the second, indicating the location
 			//of the win
 			//Needs work on this
-//			if(win)
-//			{
-//				g2.setColor(Color.RED);
-//				g2.drawLine(finalWinButton[0].getBounds().x + 27, finalWinButton[0].getBounds().y + 20,
-//				finalWinButton[2].getBounds().x + 27, finalWinButton[2].getBounds().y + 20);
-//			}
+			if(win)
+			{
+				line.setColor(Color.RED);
+				line.drawLine(finalWinButton[0].getBounds().x + 27, finalWinButton[0].getBounds().y + 20,
+				finalWinButton[3].getBounds().x + 27, finalWinButton[3].getBounds().y + 20);
+			}
 
 		}
 	}
@@ -198,8 +207,8 @@ public class TTT3D extends JFrame implements ActionListener
 
 		//Difficulty radio buttons
 		easyButton = new JRadioButton("Easy");
-		mediumButton = new JRadioButton("Medium", true);
-		hardButton = new JRadioButton("Hard");
+		mediumButton = new JRadioButton("Difficult", true);
+		hardButton = new JRadioButton("Insane");
 		easyButton.setBounds(400, 190, 150, 40);
 		mediumButton.setBounds(400, 220, 150, 40);
 		hardButton.setBounds(400, 250, 150, 40);
@@ -220,8 +229,8 @@ public class TTT3D extends JFrame implements ActionListener
 		status.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		//Current score panel
-		score = new JLabel("               You: " + humanScore + "   Me: " + computerScore);
-		score.setFont(new Font("Tahoma", Font.BOLD, 15));
+//		score = new JLabel("    Human: " + humanScore + "   Computer: " + computerScore);
+//		score.setFont(new Font("Tahoma", Font.BOLD, 15));
 
 		//Variables that determine the locations of the TicTacToeButtons as they are placed within loops
 		int rowShift = 20;
@@ -276,7 +285,6 @@ public class TTT3D extends JFrame implements ActionListener
 					getContentPane().add(boardConfig[i][j][k]);
 				}
 
-				//Check this out 
 				//Reset the column number, bump the row number one, move the position that the next button will be placed down and skew it so it matches with the game board
 				columnNum = 0;
 				rowNum++;
@@ -293,8 +301,6 @@ public class TTT3D extends JFrame implements ActionListener
 			xPos = rowStart;
 			yPos += 20;
 		}
-
-
 		//Panel setup
 		boardPanel.setVisible(true);
 		textPanel.setVisible(true);
@@ -303,7 +309,7 @@ public class TTT3D extends JFrame implements ActionListener
 
 		textPanel.setLayout(new GridLayout(2,1));
 		textPanel.add(status);
-		textPanel.add(score);
+//		textPanel.add(score);
 		textPanel.setBounds(80, 0, 380, 30);
 
 		add(xRadButton);
@@ -316,8 +322,6 @@ public class TTT3D extends JFrame implements ActionListener
 		add(newGameBtn);
 		add(textPanel);
 		add(boardPanel);
-
-
 		setVisible(true);
 	}
 
@@ -326,7 +330,6 @@ public class TTT3D extends JFrame implements ActionListener
 	* starting player, sets the title text, and checks the current difficulty. If the computer is selected to go first and the difficulty is not hard, the computer will
 	* play in a random spot to allow for a more competitive game
 	*/
-	//No need to change
 	class FirstListener implements ActionListener
 	{
 
@@ -469,7 +472,7 @@ public class TTT3D extends JFrame implements ActionListener
 
 		if(checkWin(humanPiece, newMove))
 		{
-			status.setText("You beat me! Press New Game to play again.");
+			status.setText("Human Won! Please press New Game button to play again.");
 			status.setForeground(Color.RED);
 			humanScore++;
 			win = true;
@@ -487,7 +490,7 @@ public class TTT3D extends JFrame implements ActionListener
 	 */
 	public void updateScore()
 	{
-		score.setText("               You: " + humanScore + "   Me: " + computerScore);
+//		score.setText("               You: " + humanScore + "   Me: " + computerScore);
 	}
 
 	/*
@@ -524,17 +527,18 @@ public class TTT3D extends JFrame implements ActionListener
 	public void disableBoard()
 	{
 		int index = 0;
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i <= 3; i++)
 		{
-			for (int j = 0; j < 3; j++)
+			for (int j = 0; j <= 3; j++)
 			{
-				for(int k = 0; k < 3; k++)
+				for(int k = 0; k <= 3; k++)
 				{
 					if(contains(finalWin, Integer.parseInt(boardConfig[i][j][k].getName())))
 					{
 						boardConfig[i][j][k].setEnabled(true);
 						boardConfig[i][j][k].setForeground(Color.RED);
 						finalWinButton[index] = boardConfig[i][j][k];
+						System.out.println();
 						index++;
 					}
 					else
@@ -561,7 +565,6 @@ public class TTT3D extends JFrame implements ActionListener
 		}
 		return false;
 	}
-
 
 	/*
 	 * The method computerPlayRandom() is used when the difficulty setting is easy or medium and the computer is selected to go first.
@@ -618,8 +621,8 @@ public class TTT3D extends JFrame implements ActionListener
 							//Leave the piece there if it is a win and end the game
 							config[i][j][k] = computerPiece;
 							boardConfig[i][j][k].setText(Character.toString(computerPiece));
-							status.setText("   I win! Press New Game to play again.");
-							status.setForeground(Color.RED);
+							status.setText("   AI won! Please press New Game button to play again.");
+							status.setForeground(Color.GREEN);
 							win = true;
 							computerScore++;
 							disableBoard();
@@ -815,59 +818,6 @@ public class TTT3D extends JFrame implements ActionListener
 	{
 		config[pos.board][pos.row][pos.column] = c;
 
-		//Win table
-//		int[][] wins = {
-//				//Rows on single board 9
-//				{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {9, 10, 11}, {12, 13, 14}, {15, 16, 17}, {18, 19, 20},
-//				{21, 22, 23}, {24, 25, 26},
-//
-//				//Columns on single board 9
-//				{0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {9, 12, 15}, {10, 13, 16}, {11, 14, 17}, {18, 21, 24},
-//				{19, 22, 25}, {20, 23, 26},
-//
-//				//Diagonals on single board 6
-//				{0, 4, 8}, {2, 4, 6}, {9, 13, 17}, {11, 13, 15},
-//				{18, 22, 26}, {20, 22, 24},
-//
-//				//Straight down through boards 9
-//				{0, 9, 18}, {1, 10, 19}, {2, 11, 20}, {3, 12, 21}, {4, 13, 22}, {5, 14, 23}, {6, 15, 24},
-//				{7, 16, 25}, {8, 17, 26},
-//
-//				//Diagonals through boards 16
-//				{0, 12, 24}, {1, 13, 25}, {2, 14, 26}, {6, 12, 18}, {7, 13, 19}, {8, 14, 20}, {0, 10, 20},
-//				{3, 13, 23}, {6, 16, 26},/{2, 10, 18}, {5, 13, 21}, {8, 16, 24},/ {0, 13, 26}, {2, 13, 24},
-//				{6, 13, 20}, {8, 13, 18},
-//		};
-
-		// Win Table for 4x4 grid.. Still working on it..
-		int[][] wins = {
-				//Rows on single board 16
-				{0,1,2,3}, {4,5,6,7}, {8,9,10,11}, {12,13,14,15}, {16,17,18,19} , {20,21,22,23},
-				{24,25,26,27}, {28,29,30,31}, {32,33,34,35}, {36,37,38,39}, {40,41,42,43}, {44,45,46,47},
-				{48,49,50,51} , {52,53,54,55}, {56,57,58,59}, {60,61,62,63},
-
-				//Columns on single board 16
-				{0,4,8,12}, {1,5,9,13}, {2,6,10,14}, {3,7,11,15}, {16,20,24,28}, {17,21,25,29}, {18,22,26,30},
-				{19,23,27,31}, {32,36,40,44}, {33,37,41,45}, {34,38,42,46}, {35,39,43,47}, {48,52,56,60},
-				{49,53,57,61}, {50,54,58,62}, {51,55,59,63},
-
-				//Diagonals on single board 8
-				{0,5,10,15}, {3,6,9,12}, {16,21,26,31}, {19,22,25,28}, {32,37,42,47}, {35,38,41,44},
-				{48, 53, 58, 63}, {51,54,57,60},
-
-				//Straight down through boards 16
-				{0,16,32,48}, {1,17,33,49}, {2,18,34,50}, {3,19,35,51}, {4,20,36,52}, {5,21,37,53}, {6,22,38,54},
-				{7,23,39,55}, {8,24,40,56}, {9,25,41,57}, {10,26,42,58}, {11,27,43,59}, {12,28,44,60},
-				{13,29,45,61}, {14,30,46,62}, {15,31,47,63},
-
-				//Diagonals through boards 20
-				{0,20,40,60}, {1,21,41,61}, {2,22,42,62}, {3,23,43,63}, {12,24,36,48}, {13,25,37,49}, {14,26,38,50},
-				{15,27,39,51}, {0,17,34,51}, {4,21,38,55}, {8,25,42,59}, {12,29,46,63}, {3,18,33,48}, {7,22,37,52},
-				{11,26,41,56}, {15,30,45,60}, {0,21,42,63}, {3,22,41,60}, {12,25,38,51}, {15,26,37,48}
-		};
-
-
-
 		//Array that indicates all the spaces on the game board
 		int[] gameBoard = new int[64];
 
@@ -920,7 +870,6 @@ public class TTT3D extends JFrame implements ActionListener
 		return false;
 	}
 
-
 	/*
 	 * checkAvailable is very similar to checkWin(), however instead of returning a boolean if the input
 	 * move is a win or not, this method returns an int corresponding to the amount of possible wins available
@@ -929,55 +878,6 @@ public class TTT3D extends JFrame implements ActionListener
 	private int checkAvailable(char c)
 	{
 		int winCounter = 0;
-
-		//Win table
-//		int[][] wins = {
-//				//Rows on single board
-//				{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {9, 10, 11}, {12, 13, 14}, {15, 16, 17}, {18, 19, 20},
-//				{21, 22, 23}, {24, 25, 26},
-//
-//				//Columns on single board
-//				{0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {9, 12, 15}, {10, 13, 16}, {11, 14, 17}, {18, 21, 24},
-//				{19, 22, 25}, {20, 23, 26},
-//
-//				//Diagonals on single board
-//				{0, 4, 8}, {2, 4, 6}, {9, 13, 17}, {11, 13, 15},
-//				{18, 22, 26}, {20, 22, 24},
-//
-//				//Straight down through boards
-//				{0, 9, 18}, {1, 10, 19}, {2, 11, 20}, {3, 12, 21}, {4, 13, 22}, {5, 14, 23}, {6, 15, 24},
-//				{7, 16, 25}, {8, 17, 26},
-//
-//				//Diagonals through boards
-//				{0, 12, 24}, {1, 13, 25}, {2, 14, 26}, {6, 12, 18}, {7, 13, 19}, {8, 14, 20}, {0, 10, 20},
-//				{3, 13, 23}, {6, 16, 26},{2, 10, 18}, {5, 13, 21}, {8, 16, 24}, {0, 13, 26}, {2, 13, 24},
-//				{6, 13, 20}, {8, 13, 18},
-//		};
-		int[][] wins = {
-				//Rows on single board
-				{0,1,2,3}, {4,5,6,7}, {8,9,10,11}, {12,13,14,15}, {16,17,18,19} , {20,21,22,23},
-				{24,25,26,27}, {28,29,30,31}, {32,33,34,35}, {36,37,38,39}, {40,41,42,43}, {44,45,46,47},
-				{48,49,50,51} , {52,53,54,55}, {56,57,58,59}, {60,61,62,63},
-
-				//Columns on single board
-				{0,4,8,12}, {1,5,9,13}, {2,6,10,14}, {3,7,11,15}, {16,20,24,28}, {17,21,25,29}, {18,22,26,30},
-				{19,23,27,31}, {32,36,40,44}, {33,37,41,45}, {34,38,42,46}, {35,39,43,47}, {48,52,56,60},
-				{49,53,57,61}, {50,54,58,62}, {51,55,59,63},
-
-				//Diagonals on single board
-				{0,5,10,15}, {3,6,9,12}, {16,21,26,31}, {19,22,25,28}, {32,37,42,47}, {35,38,41,44},
-				{48, 53, 58, 63}, {51,54,57,60},
-
-				//Straight down through boards
-				{0,16,32,48}, {1,17,33,49}, {2,18,34,50}, {3,19,35,51}, {4,20,36,52}, {5,21,37,53}, {6,22,38,54},
-				{7,23,39,55}, {8,24,40,56}, {9,25,41,57}, {10,26,42,58}, {11,27,43,59}, {12,28,44,60},
-				{13,29,45,61}, {14,30,46,62}, {15,31,47,63},
-
-				//Diagonals through boards
-				{0,20,40,60}, {1,21,41,61}, {2,22,42,62}, {3,23,43,63}, {12,24,36,48}, {13,25,37,49}, {14,26,38,50},
-				{15,27,39,51}, {0,17,34,51}, {4,21,38,55}, {8,25,42,59}, {12,29,46,63}, {3,18,33,48}, {7,22,37,52},
-				{11,26,41,56}, {15,30,45,60}, {0,21,42,63}, {3,22,41,60}, {12,25,38,51}, {15,26,37,48}
-		};
 
 		//Array that indicates all the spaces on the game board
 		int[] gameBoard = new int[64];

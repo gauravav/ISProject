@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="#6 Documentation done">
+    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="#6 Documentation added to GIT1">
+      <change afterPath="$PROJECT_DIR$/GIT.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +44,14 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Application.TTT3D">
+  <component name="RunManager" selected="Application.ISProject">
+    <configuration name="ISProject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ISProject" />
+      <module name="GIT" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TTT3D" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TTT3D" />
       <module name="GIT" />
@@ -60,10 +67,12 @@
     </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.ISProject" />
       <item itemvalue="Application.TTT3D" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ISProject" />
         <item itemvalue="Application.TTT3D" />
       </list>
     </recent_temporary>
@@ -83,6 +92,7 @@
       <workItem from="1670294537445" duration="11632000" />
       <workItem from="1670452074949" duration="10517000" />
       <workItem from="1670519255287" duration="36906000" />
+      <workItem from="1670635282270" duration="2694000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project with few minor changes">
       <created>1669733071472</created>
@@ -210,7 +220,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670627686486</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="#6 Documentation added to GIT">
+      <created>1670635317934</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1670635317934</updated>
+    </task>
+    <task id="LOCAL-00020" summary="#6 Documentation added to GIT1">
+      <created>1670635361533</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1670635361533</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +269,9 @@
     <MESSAGE value="#4 Red color is visible now" />
     <MESSAGE value="Green color changes while AI wins" />
     <MESSAGE value="#6 Documentation done" />
-    <option name="LAST_COMMIT_MESSAGE" value="#6 Documentation done" />
+    <MESSAGE value="#6 Documentation added to GIT" />
+    <MESSAGE value="#6 Documentation added to GIT1" />
+    <option name="LAST_COMMIT_MESSAGE" value="#6 Documentation added to GIT1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

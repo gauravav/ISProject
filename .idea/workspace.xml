@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="Green color changes while AI wins">
+    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="#6 Documentation done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +82,7 @@
       <workItem from="1670258323970" duration="2576000" />
       <workItem from="1670294537445" duration="11632000" />
       <workItem from="1670452074949" duration="10517000" />
-      <workItem from="1670519255287" duration="34422000" />
+      <workItem from="1670519255287" duration="36906000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project with few minor changes">
       <created>1669733071472</created>
@@ -202,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670626020679</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="#6 Documentation done">
+      <created>1670627686486</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1670627686486</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,14 +244,15 @@
     <MESSAGE value="#3 View and buttons ready for game" />
     <MESSAGE value="#4 Red color is visible now" />
     <MESSAGE value="Green color changes while AI wins" />
-    <option name="LAST_COMMIT_MESSAGE" value="Green color changes while AI wins" />
+    <MESSAGE value="#6 Documentation done" />
+    <option name="LAST_COMMIT_MESSAGE" value="#6 Documentation done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/3D-Tic-Tac-Toe/src/TTT3D.java</url>
-          <line>537</line>
+          <line>543</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="#6 Documentation added to GIT1">
-      <change afterPath="$PROJECT_DIR$/GIT.iml" afterDir="false" />
+    <list default="true" id="f382169f-7f3f-4611-8db8-679e877c2684" name="Changes" comment="#2 changed many variables">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +91,7 @@
       <workItem from="1670294537445" duration="11632000" />
       <workItem from="1670452074949" duration="10517000" />
       <workItem from="1670519255287" duration="36906000" />
-      <workItem from="1670635282270" duration="2694000" />
+      <workItem from="1670635282270" duration="3582000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project with few minor changes">
       <created>1669733071472</created>
@@ -234,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670635361533</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="#2 changed many variables">
+      <created>1670638008552</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1670638008552</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +277,8 @@
     <MESSAGE value="#6 Documentation done" />
     <MESSAGE value="#6 Documentation added to GIT" />
     <MESSAGE value="#6 Documentation added to GIT1" />
-    <option name="LAST_COMMIT_MESSAGE" value="#6 Documentation added to GIT1" />
+    <MESSAGE value="#2 changed many variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="#2 changed many variables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
